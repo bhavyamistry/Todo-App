@@ -3,6 +3,6 @@
 		<title>Welcome Page</title>
 	</head>
 	<body>
-		Welcome ${name}, your password is: ${password}!
+		Welcome ${name}!
 	</body>
 </html>
