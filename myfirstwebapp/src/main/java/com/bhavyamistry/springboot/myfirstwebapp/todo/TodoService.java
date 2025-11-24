@@ -21,8 +21,6 @@ public class TodoService {
 	public List<Todo> findByUsername(String username){
 		return todos;
 	}
-<<<<<<< Updated upstream
-=======
 	
 	public void addTodo(String username, String description, LocalDate targetDate, boolean isDone) {
 		todos.add(new Todo(todos.size()+1, username, description,targetDate,isDone));
@@ -45,8 +43,4 @@ public class TodoService {
 		deleteTodo(todo.getId());
 		todos.add(todo);
 	}
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 }
