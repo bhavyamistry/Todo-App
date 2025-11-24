@@ -3,6 +3,8 @@ package com.bhavyamistry.springboot.myfirstwebapp.todo;
 import java.time.LocalDate;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
 
 import jakarta.validation.Valid;
 
@@ -19,6 +22,7 @@ public class TodoController {
 	
 	private TodoService todoService;
 	
+	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	
 	public TodoController(TodoService todoService) {
@@ -67,9 +71,11 @@ public class TodoController {
 	
 	@RequestMapping(value="add-todo", method=RequestMethod.POST)
 	public String addNewTodo(ModelMap modelMap, @Valid Todo todo, BindingResult result) {
+//		logger.error("Errors are:"+result.toString());
 		if(result.hasErrors()) {
 			return "addTodos";
 		}
+		
 		todoService.addTodo((String)modelMap.get("name"), todo.getDescription(), LocalDate.now().plusYears(1), false);
 		return "redirect:list-todos";
 	}
