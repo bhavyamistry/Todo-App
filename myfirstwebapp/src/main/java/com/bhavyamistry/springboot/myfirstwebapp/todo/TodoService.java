@@ -12,6 +12,7 @@ import jakarta.validation.Valid;
 @Service
 public class TodoService {
 	private static List<Todo> todos = new ArrayList<>();
+	private static int todosCounter = 3;
 	static {
 		todos.add(new Todo(1, "Bhavya", "Learn AWS", LocalDate.now().plusYears(1),false));
 		todos.add(new Todo(2, "Bhavya", "Learn DevOps", LocalDate.now().plusYears(2),false));
@@ -23,12 +24,14 @@ public class TodoService {
 	}
 	
 	public void addTodo(String username, String description, LocalDate targetDate, boolean isDone) {
-		todos.add(new Todo(todos.size()+1, username, description,targetDate,isDone));
+		todosCounter++;
+		todos.add(new Todo(todosCounter, username, description,targetDate,isDone));
 	}
 	
 	public void deleteTodo(int id) {
 		Predicate<? super Todo> predicate = todo -> todo.getId() == id;
 		todos.removeIf(predicate);
+		todosCounter--;
 	}
 
 	public Todo findById(int id) {
@@ -42,5 +45,6 @@ public class TodoService {
 		// TODO Auto-generated method stub
 		deleteTodo(todo.getId());
 		todos.add(todo);
+		todosCounter++;
 	}
 }
