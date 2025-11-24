@@ -45,5 +45,8 @@ public class TodoService {
 		deleteTodo(todo.getId());
 		todos.add(todo);
 	}
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
