@@ -13,15 +13,15 @@ Each version is implemented in separate commits so you can easily switch between
 
 ## 🚀 Features
 
-✔ Create a new Todo
-✔ Get all Todos by user - hardcoded, can change as well in package com.bhavyamistry.springboot.myfirstwebapp.security/ SpringSecurity Configuration
-✔ Update an existing Todo
-✔ Delete a Todo
-✔ Layered architecture (Controller → Service → Repository)
-✔ Switchable data sources: List / H2 / MySQL
-✔ MySQL support via Docker
-✔ RESTful API with JSON responses
-
+* Create a new Todo
+* Get all Todos by user - hardcoded, can change as well in package com.bhavyamistry.springboot.myfirstwebapp.security/ SpringSecurity Configuration
+* Update an existing Todo
+* Delete a Todo
+* Layered architecture (Controller → Service → Repository)
+* Switchable data sources: List / H2 / MySQL
+* MySQL support via Docker
+* RESTful API with JSON responses
+* Spring Security Provided Protection
 ---
 
 ## 🛠️ Tech Stack
