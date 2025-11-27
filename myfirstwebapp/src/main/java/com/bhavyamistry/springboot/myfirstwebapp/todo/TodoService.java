@@ -48,4 +48,8 @@ public class TodoService {
 		todos.add(todo);
 		todosCounter++;
 	}
+	
+	public void addTodo(String username, String description, LocalDate targetDate, boolean isDone) {
+		todos.add(new Todo(todos.size()+1, username, description,targetDate,isDone));
+	}
 }
